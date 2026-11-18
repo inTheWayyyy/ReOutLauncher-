@@ -1,44 +1,46 @@
-<H1 align="center">MojoLauncher (a.k.a. MJLauncher)</H1>
+<h1 align="center">ReOut Launcher</h1>
 
-<a href="./README_RU.md">Readme на русском</a>
+<p align="center">
+  <img src="./reout_logo.png" width="220" alt="ReOut Launcher logo">
+</p>
 
-<img src="./app_mojo/src/main/assets/mojo.png" align="left" width="150" height="150" alt="MojoLauncher logo">
+<p align="center">
+  A Minecraft: Java Edition launcher for Android, by <b>Wertel</b> 🇮🇶<br>
+  Based on <a href="https://github.com/MojoLauncher/MojoLauncher">MojoLauncher</a>, which is based on <a href="https://github.com/PojavLauncherTeam/PojavLauncher">PojavLauncher</a>
+</p>
 
-[![Android CI](https://github.com/MojoLauncher/MojoLauncher/workflows/Android%20CI/badge.svg)](https://github.com/MojoLauncher/MojoLauncher/actions)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/MojoLauncher/MojoLauncher)](https://github.com/MojoLauncher/MojoLauncher/actions)
-[![Discord](https://img.shields.io/discord/1365346109131722753.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/VHdwQFsaGX)
+<p align="center">
+  <a href="https://discord.gg/spSgdxAxX8"><img src="https://img.shields.io/badge/Discord-ReOut-7389D8?logo=discord&logoColor=ffffff" alt="Discord"></a>
+  <a href="../../releases"><img src="https://img.shields.io/badge/Download-Releases-9B4DFF" alt="Releases"></a>
+</p>
 
-* MojoLauncher is a launcher, based on [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher), that allows you to play Minecraft: Java Edition on your Android device!
+* ReOut Launcher is a launcher that allows you to play Minecraft: Java Edition on your Android device, with its own name, purple and dark-black look, and community.
 
-* It can run almost every version of Minecraft, allowing you to use .jar only installers to install modloaders such as [Forge](https://files.minecraftforge.net/) and [Fabric](http://fabricmc.net/) and mods like [OptiFine](https://optifine.net).
+* It is built on top of MojoLauncher, which can run almost every version of Minecraft and supports installing modloaders such as [Forge](https://files.minecraftforge.net/) and [Fabric](http://fabricmc.net/).
 
 ## Navigation
 - [Introduction](#introduction)
-- [Getting MojoLauncher](#getting-mojolauncher)
-- [Building](#building) 
-- [Current roadmap](#current-roadmap) 
-- [License](#license) 
-- [Contributing](#contributing) 
+- [Getting ReOut Launcher](#getting-reout-launcher)
+- [Building](#building)
+- [Current roadmap](#current-roadmap)
+- [Known issues](#known-issues)
+- [License](#license)
+- [Contributing](#contributing)
 - [Credits & Third party components and their licenses](#credits--third-party-components-and-their-licenses-if-available)
+- [بالعربي](#بالعربي)
 
-## Introduction 
-* MojoLauncher is a Minecraft: Java Edition launcher for Android based on [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher)
-* This launcher can launch almost all available Minecraft versions ranging from rd-132211 to 26.x snapshots (including Combat Test versions). 
-* Modding via Forge and Fabric are also supported. 
+## Introduction
+* ReOut Launcher is a Minecraft: Java Edition launcher for Android, forked from [MojoLauncher](https://github.com/MojoLauncher/MojoLauncher) (itself based on [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher)).
+* The core features (running Java and the game on Android, version support, Forge and Fabric support) come from MojoLauncher and PojavLauncher. ReOut adds its own branding, theme and community on top.
+* ReOut is **not** affiliated with Mojang Studios or Microsoft. Minecraft is a trademark of Mojang Studios, and you need to own Minecraft: Java Edition to play it.
 
-## Getting MojoLauncher
+## Getting ReOut Launcher
 
-You can get MojoLauncher via four methods:
+1. Download the prebuilt APK from the [Releases](../../releases) page, then install it. You may need to allow "Install from unknown sources".
+2. Or get early builds from [GitHub Actions](../../actions).
+3. Or [build](#building) it from source.
 
-1. You can get the prebuilt app from the [releases section](http://github.com/mojolauncher/mojolauncher/releases).
-
-2. You can get it from Google Play by clicking on this badge:
-[![Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=git.artdeell.mjlaunch)
-
-3. You can get early builds from [Github Actions](http://github.com/mojolauncher/mojolauncher/actions).
-
-4. You can [build](#building) from source.
-## Building   
+## Building
 * Build the launcher (it will automatically download all required components)
 ```
 ./gradlew :app_mojo:assembleDebug
@@ -48,32 +50,32 @@ If you are building on Windows:
 * Make sure `mojoexec`, `sdl`, `glfw` are symlinked into `app_mojo/src/main/jni/`
 
 ## Current roadmap
-- [x] Instance system in favor of profiles
-- [x] Out-of-the box 1.21.5 support
-- [x] mrpack/CurseForge zip import
-- [x] LTW: enable compute shader/image extensions
-- [ ] LTW: resolve issues with Create
-- [ ] LTW: switch to a color-renderable format for framebuffers
-- [ ] Modpack/mod management tool
-- [ ] MMC-compatible instance import
-- [ ] Vintage Story support
-- [ ] Implement common native library standard
+- [x] New name, icon and logo
+- [x] Purple and dark-black theme (colors)
+- [x] Our own Discord community link inside the app
+- [ ] Recolor remaining blue buttons, sliders and switches
+- [ ] Replace remaining MojoLauncher names and links in the app
+- [ ] ReOut Loader: our own lightweight mod loader (starting with Minecraft 1.8.9)
+- [ ] Signed release builds
 
-## Known Issues
+## Known issues
+These are inherited from MojoLauncher:
 - Some physical mice may have very slow mouse speed
 - On Holy GL4ES, large texture atlases may be distorted (resulting in stretched/blocky textures in modpacks)
-- Probably more, that's why we have a bug tracker ;) 
 
 ## License
-- MojoLauncher is licensed under [GNU LGPLv3](https://github.com/MojoLauncher/MojoLauncher/blob/v3_openjdk/LICENSE).
+- ReOut Launcher is a fork of MojoLauncher and is licensed under [GNU LGPLv3](./LICENSE), the same license as the project it is based on.
+- The original copyright notices and licenses are kept in this repository. If you redistribute ReOut Launcher, follow the license terms.
 
 ## Contributing
-Contributions are welcome! We appreciate any type of contribution, not only code. For example, you can help the wiki shape up. You can help the [translation](https://mojolauncher.ru/translate/translator.html) too!
-
+Bug reports and ideas are welcome. Open an issue here, or join our [Discord](https://discord.gg/spSgdxAxX8).
 
 Any code change to this repository should be submitted as a pull request. The description should explain what the code does and give steps to execute it.
 
-## Third party components, licenses and sources (when applicable)
+## Credits & Third party components and their licenses (if available)
+ReOut Launcher exists thanks to **MojoLauncher** and **PojavLauncher** and all of their contributors.
+
+- [MojoLauncher](https://github.com/MojoLauncher/MojoLauncher): [GNU LGPLv3 License](https://github.com/MojoLauncher/MojoLauncher/blob/v3_openjdk/LICENSE)
 - [PojavLauncher](https://github.com/PojavLauncherTeam/PojavLauncher): [GNU LGPLv3 License](https://github.com/PojavLauncherTeam/PojavLauncher/blob/v3_openjdk/LICENSE)
 - Android Support Libraries: [Apache License 2.0](https://android.googlesource.com/platform/prebuilts/maven_repo/android/+/master/NOTICE.txt).
 - [Holy GL4ES](https://github.com/artdeell/gl4es_extra_extra/): [MIT License](https://github.com/ptitSeb/gl4es/blob/master/LICENSE).
@@ -89,3 +91,20 @@ Any code change to this repository should be submitted as a pull request. The de
 - [alsoft](https://github.com/kcat/openal-soft/) (Audio output library): [GNU Library General Public License](https://github.com/kcat/openal-soft/blob/master/COPYING) and [Modified PFFFT](https://github.com/kcat/openal-soft/blob/master/LICENSE-pffft).
 - [oboe](https://github.com/google/oboe): [Apache License 2.0](https://github.com/google/oboe/blob/main/LICENSE).
 - Thanks to [Mineskin](https://mineskin.eu/) for providing Minecraft avatars.
+
+---
+
+<div dir="rtl">
+
+## بالعربي
+
+**ReOut Launcher** لانشر لماينكرافت جافا على الأندرويد، بتصميم بنفسجي وأسود، من **Wertel** 🇮🇶
+
+هو فورك من **MojoLauncher** المبني على **PojavLauncher**. الشغل الأساسي (تشغيل جافا واللعبة على الأندرويد ودعم النسخ والمودات) من جهدهم، وReOut يضيف اسمه وشكله ومجتمعه.
+
+- **التحميل:** من صفحة [Releases](../../releases)، وانصب الـ APK (فعّل "التثبيت من مصادر غير معروفة" لو طلب).
+- **الديسكورد:** https://discord.gg/spSgdxAxX8
+- **الرخصة:** GNU LGPLv3، نفس رخصة المشروع الأصلي، وحقوق المطورين الأصليين محفوظة.
+- ReOut غير تابع لـ Mojang Studios ولا Microsoft، ولازم تملك ماينكرافت جافا الأصلية عشان تلعب.
+
+</div>
