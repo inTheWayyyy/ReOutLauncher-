@@ -1,0 +1,42 @@
+name: ReOut Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version tag (example: v0.1)'
+        required: true
+        default: 'v1'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - run: chmod +x gradlew
+
+      - name: Build APK
+        run: ./gradlew :app_mojo:assembleFullDebug
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app_mojo/build/outputs/apk/full/debug/*.apk "ReOut-${{ inputs.tag }}.apk"
+          gh release create "${{ inputs.tag }}" "ReOut-${{ inputs.tag }}.apk" \
+            --title "ReOut Launcher ${{ inputs.tag }}" \
+            --notes "First public test build" --prerelease
